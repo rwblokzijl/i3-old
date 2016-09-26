@@ -168,8 +168,8 @@ bar {
 }
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks"
-bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +5% && pactl set-sink-mute 0 off && pkill -RTMIN+10 i3blocks"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -5% && pactl set-sink-mute 0 off && pkill -RTMIN+10 i3blocks"
 bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks"
 
 # Sreen brightness controls
