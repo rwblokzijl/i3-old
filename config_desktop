@@ -222,3 +222,7 @@ exec --no-startup-id "spacefm"
 exec --no-startup-id "i3-msg 'workspace 1'"
 
 exec --no-startup-id "i3-msg [title=Chrome] border none"
+
+for_window [class="^.*"] border pixel 0
+
+exec_always --no-startup-id "compton --config /home/wessel/.config/i3/.compton.conf"
