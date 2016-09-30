@@ -201,6 +201,8 @@ workspace Chrome output DVI-D-1
 workspace Youtube output DVI-D-0
 workspace Media output HDMI-A-0
 
+exec_always --no-startup-id "compton --config /home/bloodyfool/.config/i3/.compton.conf"
+
 exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/bloodyfool/.config/i3/workspace-1.json'"
 
 exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/bloodyfool/.config/i3/workspace-2.json'"
@@ -225,4 +227,3 @@ exec --no-startup-id "i3-msg [title=Chrome] border none"
 
 for_window [class="^.*"] border pixel 0
 
-exec_always --no-startup-id "compton --config /home/wessel/.config/i3/.compton.conf"
