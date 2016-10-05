@@ -154,7 +154,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
+    status_command i3blocks -c $CONFIG/i3blocks.conf
 	mode hide
     tray_output primary
 	height 40
@@ -184,8 +184,8 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Touchpad controls
-bindsym XF86TouchpadOff exec $HOME/.config/i3/toggletouchpadoff.sh # toggle touchpad
-bindsym XF86TouchpadOn exec $HOME/.config/i3/toggletouchpadon.sh # toggle touchpad
+bindsym XF86TouchpadOff exec $CONFIG/toggletouchpadoff.sh # toggle touchpad
+bindsym XF86TouchpadOn exec $CONFIG/toggletouchpadon.sh # toggle touchpad
 
 #configure background
 exec_always --no-startup-id feh --randomize --bg-scale $HOME/Pictures/Backgrounds/*
@@ -215,9 +215,9 @@ exec --no-startup-id nm-applet
 exec --no-startup-id wicd-gtk -t
 
 #start programs on startup
-exec --no-startup-id "i3-msg 'workspace $WS2; append_layout $HOME/.config/i3/workspace-2.json'"
-#exec --no-startup-id "i3-msg 'workspace $WS10; append_layout $HOME/.config/i3/workspace-10.json'"
-exec --no-startup-id "i3-msg 'workspace $WS1; append_layout $HOME/.config/i3/workspace-1.json'"
+exec --no-startup-id "i3-msg 'workspace $WS2; append_layout $CONFIG/workspace-2.json'"
+#exec --no-startup-id "i3-msg 'workspace $WS10; append_layout $CONFIG/workspace-10.json'"
+exec --no-startup-id "i3-msg 'workspace $WS1; append_layout $CONFIG/workspace-1.json'"
 
 exec --no-startup-id "pavucontrol"
 
@@ -247,7 +247,7 @@ smart_borders on
 #turn off borders
 for_window [class="^.*"] border pixel 0
 
-exec --no-startup-id "compton --config $HOME/.config/i3/.compton.conf"
+exec --no-startup-id "compton --config $CONFIG/.compton.conf"
 
 exec --no-startup-id "xinput --set-prop 13 'Synaptics Two-Finger Scrolling' 1 1"
 
