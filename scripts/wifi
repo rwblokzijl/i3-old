@@ -24,7 +24,6 @@ INTERFACE="${BLOCK_INSTANCE:-wlan0}"
 # connection (think desktop), the corresponding block should not be displayed.
 if [[ "${BLOCK_BUTTON}" -eq 1 ]]; then
 	i3-msg 'workspace 10:    '
-	nohup /home/wessel/bin/wifi &
 	exit
 fi
 

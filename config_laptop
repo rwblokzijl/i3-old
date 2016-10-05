@@ -230,7 +230,10 @@ exec --no-startup-id "google-chrome"
 
 exec --no-startup-id "spotify"
 
+exec --no-startup-id "wicd-client"
+
 for_window [class="Pavucontrol"] move to workspace $WS10
+for_window [class="Wicd-client"] move to workspace $WS10
 for_window [class="Spotify"] move to workspace $WS10
 for_window [class="Spacefm"] move to workspace $WS9
 
