@@ -26,6 +26,9 @@ font pango:monospace 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+set $HOME /home/wessel
+set $CONFIG $HOME/.config/i3
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -156,7 +159,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 3 toggle # mute s
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Touchpad controls
-#bindsym XF86TouchpadOff exec /home/bloodyfool/.config/i3/toggletouchpad.sh # toggle touchpad
+#bindsym XF86TouchpadOff exec $CONFIG/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -166,7 +169,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioStop exec playerctl stop
 
 #configure background
-exec --no-startup-id feh --bg-tile '/home/bloodyfool/Pictures/Backgrounds/Three monitor backgrounds/gaming/hhj6Gin - Copy.jpg'
+exec --no-startup-id feh --bg-tile '$HOME/Pictures/Backgrounds/Three monitor backgrounds/gaming/hhj6Gin - Copy.jpg'
 
 #swap caps and escape for better VIMing
 exec --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape"
@@ -201,17 +204,16 @@ workspace Chrome output DVI-D-1
 workspace Youtube output DVI-D-0
 workspace Media output HDMI-A-0
 
-exec_always --no-startup-id "compton --config /home/bloodyfool/.config/i3/.compton.conf"
 
-exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/bloodyfool/.config/i3/workspace-1.json'"
+exec --no-startup-id "i3-msg 'workspace 1; append_layout $CONFIG/workspace-1.json'"
 
-exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/bloodyfool/.config/i3/workspace-2.json'"
+exec --no-startup-id "i3-msg 'workspace 2; append_layout $CONFIG/workspace-2.json'"
 
-exec --no-startup-id "i3-msg 'workspace Chrome; append_layout /home/bloodyfool/.config/i3/workspace-1.json'"
+exec --no-startup-id "i3-msg 'workspace Chrome; append_layout $CONFIG/workspace-1.json'"
 
-exec --no-startup-id "i3-msg 'workspace Youtube; append_layout /home/bloodyfool/.config/i3/workspace-4.json'"
+exec --no-startup-id "i3-msg 'workspace Youtube; append_layout $CONFIG/workspace-4.json'"
 
-exec --no-startup-id "i3-msg 'workspace Media; append_layout /home/bloodyfool/.config/i3/workspace-10.json'"
+exec --no-startup-id "i3-msg 'workspace Media; append_layout $CONFIG/workspace-10.json'"
 
 exec --no-startup-id "google-chrome --new-window https://www.youtube.com/feed/subscriptions"
 exec --no-startup-id "google-chrome"
@@ -227,3 +229,4 @@ exec --no-startup-id "i3-msg [title=Chrome] border none"
 
 for_window [class="^.*"] border pixel 0
 
+exec_always --no-startup-id "compton --config $CONFIG/.compton.conf"
