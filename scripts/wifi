@@ -23,8 +23,7 @@ INTERFACE="${BLOCK_INSTANCE:-wlan0}"
 # As per #36 -- It is transparent: e.g. if the machine has no battery or wireless
 # connection (think desktop), the corresponding block should not be displayed.
 if [[ "${BLOCK_BUTTON}" -eq 1 ]]; then
-	i3-msg 'workspace 10:    '
-	exit
+	i3-msg 'workspace 11:    '
 fi
 
 

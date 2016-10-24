@@ -1,7 +1,7 @@
 #!/bin/bash
 # Based on https://aur.archlinux.org/packages/playerctl/
 
-INSTANCE="${BLOCK_INSTANCE}"
+INSTANCE="spotify"
 
 if [[ "${INSTANCE}" != "" ]]; then
   ARGUMENTS="--player ${INSTANCE}"
@@ -26,14 +26,17 @@ INFO_ALBUM=$(playerctl ${ARGUMENTS} metadata album)
 INFO_ARTIST=$(playerctl ${ARGUMENTS} metadata artist)
 
 if [[ "${PLAYER_STATUS}" = "Paused" ]]; then
-  CUR_ICON="${ICON_PAUSE}"
+	echo ""
+	echo ""
+	echo ""
+	exit
 elif [[ "${PLAYER_STATUS}" = "Playing" ]]; then
   CUR_ICON="${ICON_PLAY}"
 else
   CUR_ICON="${ICON_STOP}"
 fi
 
-if [[ "${INFO_TITLE}" != "" ]] && [[ "${INFO_ARTIST}" != "" ]]; then
-  echo "${INFO_ARTIST} - ${INFO_TITLE} ${CUR_ICON}"
-  echo "${INFO_ARTIST} - ${INFO_TITLE} ${CUR_ICON}"
+if [[ "${INFO_TITLE}" != "" ]] && [[ "${INFO_ARTIST}" != "(null)" ]]; then
+  echo "${INFO_ARTIST} - ${INFO_TITLE}"
+  echo "${INFO_ARTIST} - ${INFO_TITLE}"
 fi
