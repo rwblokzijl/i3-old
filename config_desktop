@@ -9,6 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+#Mod1 = alt, Mod4 = win
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -26,8 +27,8 @@ font pango:monospace 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-set $HOME /home/wessel
-set $CONFIG $HOME/.config/i3
+set $HOME /home/bloodyfool
+set $CONFIG /home/bloodyfool/.config/i3
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -171,8 +172,8 @@ bindsym XF86AudioStop exec playerctl stop
 #configure background
 exec --no-startup-id feh --bg-tile '$HOME/Pictures/Backgrounds/Three monitor backgrounds/gaming/hhj6Gin - Copy.jpg'
 
-#swap caps and escape for better VIMing
-exec --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape"
+#swap caps and escape for better VIMing and swap alt and winkey for better i3ing
+exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape" -option "altwin:swap_lalt_lwin"
 
 #configure monitors
 exec --no-startup-id xrandr --output DVI-D-1 --auto --left-of HDMI-A-0
@@ -196,6 +197,7 @@ mode "$mode_launcher" {
 
 #enable networkmanager
 exec --no-startup-id nm-applet
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 
 #start programs on startup
 workspace 1 output HDMI-A-0
@@ -225,8 +227,11 @@ exec --no-startup-id "spacefm"
 
 exec --no-startup-id "i3-msg 'workspace 1'"
 
-exec --no-startup-id "i3-msg [title=Chrome] border none"
-
+for_window [class="Steam"] move to workspace 7
+for_window [class="dota2"] move to workspace 8
+for_window [class="hl2_linux"] move to workspace 8
+#for_window [class="net-minecraft-bootstrap-Bootstrap"] move to workspace 8
+for_window [class="inecraft"] move to workspace 8
 for_window [class="^.*"] border pixel 0
 
 exec_always --no-startup-id "compton --config $CONFIG/.compton.conf"
