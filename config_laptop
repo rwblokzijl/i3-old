@@ -26,8 +26,8 @@ font pango:monospace 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-set $HOME /home/wessel
-set $CONFIG /home/wessel/.config/i3
+set $HOME /home/bloodyfool
+set $CONFIG /home/bloodyfool/.config/i3
 
 set $dark		#2b303bFF
 set $bright		#dfe1e8FF
@@ -202,6 +202,7 @@ exec_always --no-startup-id feh --randomize --bg-scale $HOME/Pictures/Background
 
 #swap caps and escape for better VIMing
 exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape"
+exec_always --no-startup-id /usr/bin/setxkbmap -option "altwin:swap_lalt_lwin"
 
 #make i3 windows slightly bigger by hiding edge borders
 hide_edge_borders both
@@ -231,7 +232,7 @@ exec --no-startup-id "i3-msg 'workspace $WS1; append_layout $CONFIG/workspace-1.
 
 exec --no-startup-id "pavucontrol"
 
-exec --no-startup-id "gnome-terminal"
+exec --no-startup-id "gnome-terminal --working-directory /etc/openvpn"
 exec --no-startup-id "gnome-terminal"
 
 exec --no-startup-id "thunar"
