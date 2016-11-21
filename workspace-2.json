@@ -4,44 +4,20 @@
     "current_border_width": 0,
     "floating": "auto_off",
     "geometry": {
-       "height": 431,
-       "width": 722,
+       "height": 433,
+       "width": 735,
        "x": 0,
        "y": 0
     },
-    "name": "wessel@wessel-Lenovo-G500s: ~",
-    "percent": 0.5,
+    "name": "bloodyfool@Desktop: ~/.config/i3",
+    "percent": 1,
     "swallows": [
        {
        "class": "^Gnome\\-terminal$"
        // "instance": "^gnome\\-terminal\\-server$",
-       // "title": "^wessel\\@wessel\\-Lenovo\\-G500s\\:\\ \\~$",
+       // "title": "^bloodyfool\\@Desktop\\:\\ \\~\\/\\.config\\/i3$",
        // "transient_for": "^$",
-       // "window_role": "^gnome\\-terminal\\-window\\-0c3ca2ec\\-aec7\\-4aeb\\-b975\\-157e673b3000$"
-       }
-    ],
-    "type": "con"
-}
-
-{
-    "border": "pixel",
-    "current_border_width": 0,
-    "floating": "auto_off",
-    "geometry": {
-       "height": 431,
-       "width": 722,
-       "x": 0,
-       "y": 0
-    },
-    "name": "wessel@wessel-Lenovo-G500s: ~",
-    "percent": 0.5,
-    "swallows": [
-       {
-       "class": "^Gnome\\-terminal$"
-       // "instance": "^gnome\\-terminal\\-server$",
-       // "title": "^wessel\\@wessel\\-Lenovo\\-G500s\\:\\ \\~$",
-       // "transient_for": "^$",
-       // "window_role": "^gnome\\-terminal\\-window\\-747fe7be\\-e631\\-4fd0\\-8982\\-4de2e5ae0308$"
+       // "window_role": "^gnome\\-terminal\\-window\\-74d1421a\\-9e86\\-449f\\-91c7\\-30fca0f12bb5$"
        }
     ],
     "type": "con"
