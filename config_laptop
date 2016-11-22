@@ -100,7 +100,7 @@ bindsym $mod+a focus parent
 
 set $WS1 1:    
 set $WS2 2:    
-set $WS3 3:    
+set $WS3 3:  3  
 set $WS4 4:  4  
 set $WS5 5:  5  
 set $WS6 6:  6  
@@ -201,8 +201,7 @@ bindsym XF86TouchpadOn exec $CONFIG/toggletouchpadon.sh # toggle touchpad
 exec_always --no-startup-id feh --randomize --bg-scale $HOME/Pictures/Backgrounds/*
 
 #swap caps and escape for better VIMing
-exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape"
-exec_always --no-startup-id /usr/bin/setxkbmap -option "altwin:swap_lalt_lwin"
+exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape" -option "altwin:swap_lalt_lwin"
 
 #make i3 windows slightly bigger by hiding edge borders
 hide_edge_borders both
