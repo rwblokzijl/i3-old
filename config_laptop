@@ -45,6 +45,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+#start browser
+bindsym $mod+i exec google-chrome
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -231,7 +234,7 @@ exec --no-startup-id "i3-msg 'workspace $WS1; append_layout $CONFIG/workspace-1.
 
 exec --no-startup-id "pavucontrol"
 
-exec --no-startup-id "gnome-terminal --working-directory /etc/openvpn"
+#exec --no-startup-id "gnome-terminal --working-directory /etc/openvpn"
 exec --no-startup-id "gnome-terminal"
 
 exec --no-startup-id "thunar"
@@ -242,20 +245,22 @@ exec --no-startup-id "spotify"
 
 exec --no-startup-id "wicd-client"
 
+for_window [class="Putty"] move to workspace $WS4
 for_window [class="Thunar"] move to workspace $WS9
 for_window [class="Spotify"] move to workspace $WS10
 for_window [class="Pavucontrol"] move to workspace $WS11
 for_window [class="Wicd-client"] move to workspace $WS11
 
 #Enable gaps
-gaps inner 15
+gaps inner 0
+#gaps inner 15
 
 smart_gaps on
 
 smart_borders on
 
 #turn off borders
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 3
 
 exec --no-startup-id "compton --config $CONFIG/.compton.conf"
 
