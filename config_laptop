@@ -107,7 +107,7 @@ set $WS3 3:  3
 set $WS4 4:  4  
 set $WS5 5:  5  
 set $WS6 6:  6  
-set $WS7 7:  7  
+set $WS7 7:    
 set $WS8 8:    
 set $WS9 9:    
 set $WS10 10:   
@@ -245,6 +245,11 @@ exec --no-startup-id "spotify"
 
 exec --no-startup-id "wicd-client"
 
+for_window [class="Steam"] move to workspace $WS7
+for_window [title="^Steam$"] move to workspace $WS7
+for_window [class="dota2"] move to workspace $WS8
+for_window [class="hl2_linux"] move to workspace $WS8
+for_window [class="inecraft"] move to workspace $WS8
 for_window [class="Putty"] move to workspace $WS4
 for_window [class="Thunar"] move to workspace $WS9
 for_window [class="Spotify"] move to workspace $WS10
