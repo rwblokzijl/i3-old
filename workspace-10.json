@@ -5,7 +5,7 @@
     "floating": "auto_off",
     "geometry": {
        "height": 731,
-       "width": 1366,
+       "width": 1920,
        "x": 0,
        "y": 0
     },
@@ -21,70 +21,3 @@
     ],
     "type": "con"
 }
-
-{
-    // splitv split container with 1 children
-    "border": "normal",
-    "floating": "auto_off",
-    "layout": "splitv",
-    "percent": 0.5,
-    "type": "con",
-    "nodes": [
-        {
-            // tabbed split container with 2 children
-            "border": "normal",
-            "floating": "auto_off",
-            "layout": "tabbed",
-            "percent": 1,
-            "type": "con",
-            "nodes": [
-                {
-                    "border": "normal",
-                    "current_border_width": 2,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 1043,
-                       "width": 958,
-                       "x": 0,
-                       "y": 0
-                    },
-                    "name": "/home/bloodyfool/Downloads/Narcos S02E03 720p WEBRip x264-TheRival",
-                    "percent": 0.5,
-                    "swallows": [
-                       {
-                        "class": "^Spacefm$"
-                       // "instance": "^spacefm$",
-                       // "title": "^\\/home\\/bloodyfool\\/Downloads\\/Narcos\\ S02E03\\ 720p\\ WEBRip\\ x264\\-TheRival$",
-                       // "transient_for": "^$",
-                       // "window_role": "^file_manager$"
-                       }
-                    ],
-                    "type": "con"
-                },
-                {
-                    "border": "normal",
-                    "current_border_width": 2,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 1043,
-                       "width": 958,
-                       "x": 2880,
-                       "y": 18
-                    },
-                    "name": "Mumble -- 1.2.12-1ubuntu1",
-                    "percent": 0.5,
-                    "swallows": [
-                       {
-                        "class": "^Mumble$"
-                       // "instance": "^mumble$",
-                       // "title": "^Mumble\\ \\-\\-\\ 1\\.2\\.12\\-1ubuntu1$",
-                       // "transient_for": "^$"
-                       }
-                    ],
-                    "type": "con"
-                }
-            ]
-        }
-    ]
-}
-
