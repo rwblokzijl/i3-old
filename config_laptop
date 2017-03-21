@@ -45,6 +45,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+#start browser
+bindsym $mod+i exec google-chrome
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -100,11 +103,11 @@ bindsym $mod+a focus parent
 
 set $WS1 1:    
 set $WS2 2:    
-set $WS3 3:    
+set $WS3 3:  3  
 set $WS4 4:  4  
 set $WS5 5:  5  
 set $WS6 6:  6  
-set $WS7 7:  7  
+set $WS7 7:    
 set $WS8 8:    
 set $WS9 9:    
 set $WS10 10:   
@@ -201,8 +204,7 @@ bindsym XF86TouchpadOn exec $CONFIG/toggletouchpadon.sh # toggle touchpad
 exec_always --no-startup-id feh --randomize --bg-scale $HOME/Pictures/Backgrounds/*
 
 #swap caps and escape for better VIMing
-exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape"
-exec_always --no-startup-id /usr/bin/setxkbmap -option "altwin:swap_lalt_lwin"
+exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape" -option "altwin:swap_lalt_lwin"
 
 #make i3 windows slightly bigger by hiding edge borders
 hide_edge_borders both
@@ -232,7 +234,7 @@ exec --no-startup-id "i3-msg 'workspace $WS1; append_layout $CONFIG/workspace-1.
 
 exec --no-startup-id "pavucontrol"
 
-exec --no-startup-id "gnome-terminal --working-directory /etc/openvpn"
+#exec --no-startup-id "gnome-terminal --working-directory /etc/openvpn"
 exec --no-startup-id "gnome-terminal"
 
 exec --no-startup-id "thunar"
@@ -243,20 +245,27 @@ exec --no-startup-id "spotify"
 
 exec --no-startup-id "wicd-client"
 
+for_window [class="Steam"] move to workspace $WS7
+for_window [title="^Steam$"] move to workspace $WS7
+for_window [class="dota2"] move to workspace $WS8
+for_window [class="hl2_linux"] move to workspace $WS8
+for_window [class="inecraft"] move to workspace $WS8
+for_window [class="Putty"] move to workspace $WS4
 for_window [class="Thunar"] move to workspace $WS9
 for_window [class="Spotify"] move to workspace $WS10
 for_window [class="Pavucontrol"] move to workspace $WS11
 for_window [class="Wicd-client"] move to workspace $WS11
 
 #Enable gaps
-gaps inner 15
+gaps inner 0
+#gaps inner 15
 
 smart_gaps on
 
 smart_borders on
 
 #turn off borders
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 3
 
 exec --no-startup-id "compton --config $CONFIG/.compton.conf"
 

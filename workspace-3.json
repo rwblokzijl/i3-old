@@ -1,0 +1,24 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 3,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 671,
+       "width": 894,
+       "x": 0,
+       "y": 0
+    },
+    "name": "VM Maestro ",
+    "percent": 1,
+    "swallows": [
+       {
+       // "class": "^SWT$",
+       // "instance": "^SWT$",
+       "title": "^VM\\ Maestro\\ $"
+       // "transient_for": "^$"
+       }
+    ],
+    "type": "con"
+}
+
