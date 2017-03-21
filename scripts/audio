@@ -33,5 +33,5 @@ if [[ "${status}" == "no" ]]; then
 else
   echo " MUTE"
   echo " MUTE"
-  echo "#EE3300"
+  echo "#c55d51"
 fi

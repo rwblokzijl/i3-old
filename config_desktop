@@ -19,16 +19,16 @@ font pango:DejaVu Sans Mono 8
 set $HOME /home/bloodyfool
 set $CONFIG /home/bloodyfool/.config/i3
 
-set $dark		#000000
-set $bright		#BBBBBB
+set $dark		#282828
+set $bright		#ebdbb2
 set $blue		#0f0fFF
 set $red		#CC0000
 
-set $border		#2b303bFF
-set $background	#2b303bFF
-set $paneltext	#a7adbaFF
-set $active		#bf616aFF
-set $inactive	#a7adbaFF
+set $border		#282828
+set $background	#282828
+set $paneltext	#a89984
+set $active		#c55d51
+set $inactive	#a89984
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

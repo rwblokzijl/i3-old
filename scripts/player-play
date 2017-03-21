@@ -27,8 +27,8 @@ echo "${CUR_ICON}"
 echo "${CUR_ICON}"
 
 if [[ "${PLAYER_STATUS}" = "Playing" ]]; then
-	echo "#00FF00"
+	echo "#b8bb26"
 elif [[ "${PLAYER_STATUS}" = "Paused" ]]; then
-	echo "#EE3300"
+	echo "#fb5f4d"
 fi
 
