@@ -204,7 +204,7 @@ bindsym XF86AudioPrev exec "playerctl previous && pkill -RTMIN+10 i3blocks"
 bindsym XF86AudioStop exec "playerctl stop && pkill -RTMIN+10 i3blocks"
 
 #configure background
-exec --no-startup-id feh --bg-tile '$HOME/Pictures/Backgrounds/Three monitor backgrounds/gaming/hhj6Gin - Copy.jpg'
+exec_always --no-startup-id feh --bg-tile '$HOME/Pictures/Backgrounds/Three monitor backgrounds/gaming/hhj6Gin - Copy.jpg'
 
 #swap caps and escape for better VIMing and swap alt and winkey for better i3ing
 exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape" -option "altwin:swap_lalt_lwin"
@@ -213,7 +213,8 @@ exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape" -option
 exec --no-startup-id xrandr --output DVI-1 --auto --left-of HDMI-0
 
 #make i3 windows slightly bigger by hiding edge borders
-hide_edge_borders horizontal
+hide_edge_borders both
+#hide_edge_borders horizontal
 
 #toggling floating windows by using mod+t
 bindsym $mod+t floating toggle
