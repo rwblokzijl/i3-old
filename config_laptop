@@ -250,7 +250,6 @@ for_window [title="^Steam$"] move to workspace $WS7
 for_window [class="dota2"] move to workspace $WS8
 for_window [class="hl2_linux"] move to workspace $WS8
 for_window [class="inecraft"] move to workspace $WS8
-for_window [class="Putty"] move to workspace $WS4
 for_window [class="Thunar"] move to workspace $WS9
 for_window [class="Spotify"] move to workspace $WS10
 for_window [class="Pavucontrol"] move to workspace $WS11
