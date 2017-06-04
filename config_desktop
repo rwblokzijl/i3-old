@@ -23,6 +23,7 @@ set $dark		#282828
 set $bright		#ebdbb2
 set $blue		#0f0fFF
 set $red		#CC0000
+set $grey		#a89984
 
 set $border		#282828
 set $background	#282828
@@ -43,7 +44,8 @@ bindsym $mod+c exec google-chrome
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 485 -opacity "85" -bw 0 -bc "$grey" -bg "$background" -fg "$bright" -hlbg "$background" -hlfg "#9575cd"
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -92,6 +94,10 @@ bindsym $mod+o workspace next
 bindsym $mod+i workspace prev
 bindsym $mod+u focus output left
 bindsym $mod+p focus output right
+
+# chill/unchill
+bindsym $mod+z exec chill
+bindsym $mod+x exec nochill
 
 set $WS1 "1:    "
 set $WS2 "2:    "
@@ -204,7 +210,7 @@ bindsym XF86AudioPrev exec "playerctl previous && pkill -RTMIN+10 i3blocks"
 bindsym XF86AudioStop exec "playerctl stop && pkill -RTMIN+10 i3blocks"
 
 #configure background
-exec_always --no-startup-id feh --bg-tile '$HOME/Pictures/Backgrounds/Three monitor backgrounds/gaming/hhj6Gin - Copy.jpg'
+exec_always --no-startup-id feh --bg-tile '$HOME/Pictures/Backgrounds/Three monitor backgrounds/Exeptional/2/egypt_fantasy.jpg'
 
 #swap caps and escape for better VIMing and swap alt and winkey for better i3ing
 exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape" -option "altwin:swap_lalt_lwin"
