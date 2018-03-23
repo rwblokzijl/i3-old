@@ -39,6 +39,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 #Start a browser
 bindsym $mod+c exec google-chrome
+bindsym $mod+Shift+c exec google-chrome --incognito
+bindsym $mod+Shift+v exec firefox
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -90,29 +92,48 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # change workspace
-bindsym $mod+o workspace next
-bindsym $mod+i workspace prev
-bindsym $mod+u focus output left
-bindsym $mod+p focus output right
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+i focus output left
+bindsym $mod+o focus output right
 
 # chill/unchill
 bindsym $mod+z exec chill
 bindsym $mod+x exec nochill
 
+# Chrome
 set $WS1 "1:    "
+# Terminal
 set $WS2 "2:    "
+# 3
 set $WS3 "3:  3  "
+# 4
 set $WS4 "4:  4  "
+# 5
 set $WS5 "5:  5  "
+# 6
 set $WS6 "6:  6  "
+# Steam
 set $WS7 "7:    "
+# Gaming
 set $WS8 "8:    "
+# Thunar
 set $WS9 "9:    "
+# Spotify
 set $WS10 "10:    "
+# Settings
 set $WS11 "11:    "
+# Youtube
 set $WS12 "12:    "
+# Mpv
 set $WS13 "13:    "
+# Left chrome
 set $WS14 "14:    "
+
+set $SC1 DVI-1
+set $SC2 DVI-0
+set $SC3 HDMI-0
+
 
 # switch to workspace
 bindsym $mod+grave workspace $WS14
@@ -128,10 +149,11 @@ bindsym $mod+9 workspace $WS9
 bindsym $mod+0 workspace $WS10
 bindsym $mod+minus workspace $WS11
 bindsym $mod+y workspace $WS12
-bindsym $mod+plus focus output DVI-0
+bindsym $mod+plus focus output $SC3
 
 # move focused container to workspace
-bindsym $mod+Shift+grave move container to output DVI-1
+bindsym $mod+Shift+grave move container to workspace $WS14
+#bindsym $mod+Shift+grave move container to output $SC1
 bindsym $mod+Shift+1 move container to workspace $WS1
 bindsym $mod+Shift+2 move container to workspace $WS2
 bindsym $mod+Shift+3 move container to workspace $WS3
@@ -144,10 +166,10 @@ bindsym $mod+Shift+9 move container to workspace $WS9
 bindsym $mod+Shift+0 move container to workspace $WS10
 bindsym $mod+Shift+underscore move container to workspace $WS11
 bindsym $mod+Shift+y move container to workspace $WS12
-bindsym $mod+Shift+equal move container to output DVI-0
+bindsym $mod+Shift+equal move container to output $SC3
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+#bindsym $mod+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -210,13 +232,15 @@ bindsym XF86AudioPrev exec "playerctl previous && pkill -RTMIN+10 i3blocks"
 bindsym XF86AudioStop exec "playerctl stop && pkill -RTMIN+10 i3blocks"
 
 #configure background
-exec_always --no-startup-id feh --bg-tile '$HOME/Pictures/Backgrounds/Three monitor backgrounds/Exeptional/2/egypt_fantasy.jpg'
+exec_always --no-startup-id feh --bg-scale --no-xinerama '$HOME/Pictures/Backgrounds/Three monitor backgrounds/Exeptional/B07Wxf8.jpg'
 
 #swap caps and escape for better VIMing and swap alt and winkey for better i3ing
 exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape" -option "altwin:swap_lalt_lwin"
 
 #configure monitors
-exec --no-startup-id xrandr --output DVI-1 --auto --left-of HDMI-0
+exec --no-startup-id xrandr --output $SC1 --auto --left-of $SC2
+exec --no-startup-id xrandr --output $SC3 --auto --right-of $SC2
+exec --no-startup-id xrandr --output DVI-0 --primary
 
 #make i3 windows slightly bigger by hiding edge borders
 hide_edge_borders both
@@ -230,22 +254,20 @@ exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 
 # Assign workspaces to Monitors
-workspace $WS1 output HDMI-0
-workspace $WS2 output HDMI-0
-workspace $WS3 output HDMI-0
-workspace $WS4 output HDMI-0
-workspace $WS5 output HDMI-0
-workspace $WS6 output HDMI-0
-workspace $WS7 output HDMI-0
-workspace $WS8 output HDMI-0
-workspace $WS9 output HDMI-0
-workspace $WS10 output HDMI-0
-workspace $WS11 output HDMI-0
-
-workspace $WS14 output DVI-1
-
-workspace $WS12 output DVI-0
-workspace $WS13 output DVI-0
+workspace $WS1 output $SC2
+workspace $WS2 output $SC2
+workspace $WS3 output $SC2
+workspace $WS4 output $SC2
+workspace $WS5 output $SC2
+workspace $WS6 output $SC2
+workspace $WS7 output $SC2
+workspace $WS8 output $SC2
+workspace $WS9 output $SC2
+workspace $WS10 output $SC2
+workspace $WS11 output $SC2
+workspace $WS12 output $SC3
+workspace $WS13 output $SC3
+workspace $WS14 output $SC1
 
 # Enable transparent terminal
 exec_always --no-startup-id "compton --config $CONFIG/.compton.conf"
@@ -267,24 +289,30 @@ for_window [class="dota2"]				move to workspace $WS8
 for_window [class="hl2_linux"]			move to workspace $WS8
 for_window [class="inecraft"]			move to workspace $WS8
 for_window [class="factorio"]			move to workspace $WS8
+for_window [class="Halo.exe"]			move to workspace $WS8
 for_window [class="^Thunar$"]			move to workspace $WS9
 for_window [class="Spotify"]			move to workspace $WS10
 for_window [class="Mumble"]				move to workspace $WS11
 for_window [class="mpv"]				move to workspace $WS13
 for_window [title="^Google Hangouts "]	move to workspace $WS14
+for_window [class="^discord$"]			move to workspace $WS14
 
 # Set the window borders to indicate the current focused window
 for_window [class="^.*"] border pixel 4
+no_focus [window_role="pop-up"]
 
 # Start the programs
 exec --no-startup-id "google-chrome"
 exec --no-startup-id "google-chrome"
 exec --no-startup-id "google-chrome"
-exec --no-startup-id "steam"
+#exec --no-startup-id "steam"
 exec --no-startup-id "spotify"
-exec --no-startup-id "thunar"
+#exec --no-startup-id "thunar"
 exec --no-startup-id "gnome-terminal"
-exec --no-startup-id "pavucontrol"
+#exec --no-startup-id "pavucontrol"
+exec --no-startup-id "insync start"
 
 # Finally focus workspace 1
-exec --no-startup-id i3-msg 'workspace $WS1'
+exec --no-startup-id i3-msg "workspace $WS1"
+
+exec_always --no-startup-id "xset mouse 2 0"
