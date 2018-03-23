@@ -32,13 +32,13 @@ fi
 if [[ ! -d /sys/class/net/${INTERFACE}/wireless ]]; then
 	echo "0%"
 	echo "0%"
-	echo "#EE3300"
+	echo "#C55D51"
 	exit
 fi	
 if [[ "$(cat /sys/class/net/$INTERFACE/operstate)" == 'down' ]]; then
 	echo "0%"
 	echo "0%"
-	echo "#EE3300"
+	echo "#C55D51"
 	exit
 fi	
 
@@ -54,11 +54,11 @@ echo $QUALITY # short text
 
 # color
 if [[ $QUALITY -ge 80 ]]; then
-    echo "#00FF00"
+    echo "#B8BB26"
 elif [[ $QUALITY -lt 80 ]]; then
-    echo "#FFF600"
+    echo "#FABD2F"
 elif [[ $QUALITY -lt 60 ]]; then
-    echo "#FFAE00"
+    echo "#FE8019"
 elif [[ $QUALITY -lt 40 ]]; then
-    echo "#FF0000"
+	echo "#C55D51"
 fi
