@@ -1,0 +1,10 @@
+#!/bin/bash
+
+IP_ADDRESS=$(wget http://ipinfo.io/ip -qO -)
+IP_LOC=$(geoiplookup $IP_ADDRESS | grep -oP "( [A-Z]{2})")
+
+if [[ "${IP_LOC}" != "" ]]; then
+  echo "${IP_LOC}: "
+  echo "${IP_LOC}: "
+  echo ""
+fi

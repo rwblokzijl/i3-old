@@ -1,0 +1,9 @@
+#!/bin/bash
+
+IP_ADDRESS=$(wget http://ipinfo.io/ip -qO -)
+
+if [[ "${IP_ADDRESS}" != "" ]]; then
+  echo "${IP_ADDRESS}"
+  echo "${IP_ADDRESS}"
+  echo ""
+fi
